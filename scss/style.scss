@@ -1,0 +1,324 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&display=swap');
+$fontFamily: 'Montserrat',
+sans-serif;
+$fontSize: 16px;
+$primary: #2c3e50;
+$secondary: #27ae60;
+$tertiary: #4a9375;
+$accents: #f1c40f;
+$gray: #e9ecef;
+$white: #fff;
+$transition: .3s ease;
+$textShadow: 0 0 2px $primary;
+$transition: .5s easa;
+@mixin flexCenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@mixin btn {
+    padding: 15px 30px;
+    border: none;
+    background: $accents;
+    font-size: 1rem;
+    margin-top: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    @media(max-width:768px) {
+        font-size: .9rem;
+        margin-top: 10px;
+        padding: 10px 20px;
+        letter-spacing: 2px;
+    }
+    &:hover {
+        background: $primary;
+        cursor: pointer;
+        transition: $transition;
+        color: $white;
+    }
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: $fontFamily;
+    font-size: $fontSize;
+    line-height: 1.6;
+}
+a {
+    text-decoration: none;
+}
+a:hover {
+    transition: $transition;
+}
+ul {
+    list-style: none;
+}
+/*******************
+topBar
+*******************/
+.topBar {
+    background: $primary;
+    padding: 5px 0;
+    .container {
+        @include flexCenter;
+        width: 80%;
+        margin: auto;
+        justify-content: space-between;
+        .logo {
+            font-size: 2rem;
+            color: $accents;
+            letter-spacing: 1px;
+            font-weight: 800;
+            text-transform: uppercase;
+            @media(max-width:768px) {
+                font-size: 1.5rem;
+                width: 50%;
+                text-shadow: 1px 1px 0 $white;
+            }
+            &:hover {
+                color: $white;
+            }
+        }
+        .icons {
+            a {
+                color: $white;
+                font-size: 1.5rem;
+                margin-left: 20px;
+                @media(max-width:768px) {
+                    font-size: 1.2rem;
+                    margin-left: 10px;
+                }
+                &:hover {
+                    color: $accents;
+                }
+            }
+        }
+    }
+}
+/*******************
+nav
+*******************/
+nav {
+    background: $white;
+    ul {
+        display: flex;
+        justify-content: center;
+        margin-top: 15px;
+        @media(max-width:768px) {
+            flex-wrap: wrap;
+        }
+        li {
+            margin: 10px;
+            @media(max-width:768px) {
+                padding: 10px;
+                text-decoration: underline;
+                font-size: 1.2rem;
+                margin: 0;
+            }
+            a {
+                color: $accents;
+                font-size: 1.2rem;
+                font-weight: 600;
+                &:hover {
+                    color: $secondary;
+                }
+            }
+        }
+    }
+}
+/*******************
+header
+*******************/
+header {
+    background-image: url(../img/header.jpg);
+    background-position: center;
+    background-size: cover;
+    height: 95vh;
+    @include flexCenter;
+    @media(max-width:768px) {
+        height: 75vh;
+    }
+    .box {
+        background: rgba($secondary, 0.4);
+        padding: 40px;
+        border: 1px solid $gray;
+        color: $white;
+        text-align: center;
+        h1 {
+            font-size: 3rem;
+            text-shadow: $textShadow;
+            @media(max-width:768px) {
+                font-size: 1.5rem;
+                font-weight: 600;
+            }
+        }
+        h4 {
+            font-weight: 300;
+            font-size: 1.5rem;
+            @media(max-width:768px) {
+                font-weight: 400;
+            }
+        }
+        a {
+            button {
+                @include btn;
+            }
+        }
+    }
+}
+/*******************
+onama
+*******************/
+.onama {
+    background-image: linear-gradient(rgba($tertiary, 0.7), rgba($secondary, 0.7)), url(../img/onama.jpg);
+    background-position: center bottom;
+    height: 60vh;
+    @include flexCenter;
+    text-align: center;
+    color: $white;
+    @media(max-width:768px) {
+        height: auto;
+    }
+    h2 {
+        font-size: 3rem;
+        text-shadow: $textShadow;
+    }
+    p {
+        text-shadow: $textShadow;
+        @media(max-width:768px) {
+            text-align: justify;
+            padding: 10px;
+            height: auto;
+        }
+    }
+}
+/*******************
+izdvojeno
+*******************/
+.izdvojeno {
+    display: flex;
+    flex-wrap: wrap;
+    article {
+        flex: 1;
+        background: linear-gradient(to right, $accents, $gray);
+        img {
+            width: 100%;
+        }
+        div {
+            padding: 20px;
+            text-align: center;
+            color: $white;
+            h4 {
+                font-weight: 600;
+            }
+            p {
+                margin-right: 0;
+                font-weight: 600;
+                font-size: 2.5rem;
+                span {
+                    font-size: 1.8rem;
+                    position: relative;
+                    top: -20px;
+                    font-weight: 300;
+                }
+                span.two {
+                    position: relative;
+                    top: 0px;
+                    font-size: 1.8rem;
+                }
+            }
+        }
+    }
+}
+/*******************
+benefiti
+*******************/
+.benefiti {
+    display: flex;
+    flex-wrap: wrap;
+    article {
+        flex: 0 0 50%;
+        background: $gray;
+        height: 50vh;
+        @media(max-width:768px) {
+            display: flex;
+            flex: 0 0 100%;
+            height: auto;
+        }
+        
+    }
+    article:nth-child(1),
+    article:nth-child(4) {
+        @include flexCenter;
+        flex-direction: column;
+        padding: 80px;
+        justify-content: center;
+        @media(max-width:768px) {
+            padding: 30px;
+            text-align: justify;
+        }
+        @media(max-width:768px-1024px) {
+            display: flex;
+            flex: 0 0 100%;
+            height: 100;
+        }
+    }
+    article:nth-child(2) {
+        background-image: url(../img/benefiti1.jpg);
+        background-position: center;
+        background-size: cover;
+        @media(max-width:768px) {
+            height: 50vh;
+        }
+    }
+    article:nth-child(3) {
+        background-image: url(../img/benefiti2.jpg);
+        background-position: center;
+        background-size: cover;
+        @media(max-width:768px) {
+            display: none;
+        }
+    }
+}
+/*****************
+footer
+*****************/
+footer {
+    background: $primary;
+    .container {
+        .row {
+            text-align: center;
+            color: $secondary;
+            line-height: 1.8;
+            .col-md-5 {
+                iframe {
+                    width: 100%;
+                    padding: 10px;
+                }
+            }
+            .col-md-3 {
+                ul {
+                    li {
+                        line-height: 2.2;
+                        font-size: 1.2rem;
+                        a {
+                            color: $secondary;
+                            &:hover {
+                                color: white;
+                                transition: $transition;
+                            }
+                        }
+                    }
+                }
+            }
+            .fi {
+                color: $secondary;
+                line-height: 2.5;
+                font-size: 1.2rem;
+            }
+        }
+    }
+}
